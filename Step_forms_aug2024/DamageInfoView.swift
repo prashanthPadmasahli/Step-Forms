@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct DamageInfoView: View {
+    @Binding var damageInfo: DamageInfo
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("title", text: $damageInfo.title)
+            TextField("Damage desc", text: $damageInfo.description)
+        }
     }
+    
 }
 
-#Preview {
-    DamageInfoView()
-}
+//#Preview {
+//    DamageInfoView()
+//}

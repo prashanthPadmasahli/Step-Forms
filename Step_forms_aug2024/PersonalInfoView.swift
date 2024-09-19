@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct PersonalInfoView: View {
+    @Binding var personalInfo: PersonalInfo
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("First name", text: $personalInfo.firstname)
+            TextField("Last name", text: $personalInfo.lastname)
+        }
     }
 }
 
-#Preview {
-    PersonalInfoView()
-}
+//#Preview {
+//    PersonalInfoView()
+//}

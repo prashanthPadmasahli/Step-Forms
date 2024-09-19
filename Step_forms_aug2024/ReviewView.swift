@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct ReviewView: View {
+    let personData: PersonData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                Text(personData.personal.firstname)
+                Text(personData.personal.lastname)
+            } header: {
+                Text("Personal Info")
+            }
+
+            Section {
+                Text(personData.damageInfo.title)
+                Text(personData.damageInfo.description)
+            } header: {
+                Text("Damage Info")
+            }
+            
+            Section {
+                Text(personData.address.street)
+                Text(personData.address.city)
+                Text(personData.address.pincode)
+            } header: {
+                Text("Address Info")
+            }
+        }
     }
 }
 
-#Preview {
-    ReviewView()
-}
+//#Preview {
+//    ReviewView()
+//}

@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct AddressView: View {
+    @Binding var address: Address
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Street", text: $address.street)
+            TextField("City", text: $address.city)
+            TextField("Pincode", text: $address.pincode)
+        }
     }
 }
 
-#Preview {
-    AddressView()
-}
+//#Preview {
+//    AddressView()
+//}
